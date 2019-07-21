@@ -9,10 +9,15 @@ class CardTransaction extends Model
 {
     public function __construct($data = null)
     {
-        parent::__construct($data, 'transactionId');
+        parent::__construct($data);
     }
 
     protected $children = ['transactionMetaData' => self::ITEM, 'creditCard' => self::ITEM, 'vendorInfo' => self::ITEM];
+
+    /**
+     * @var string
+     */
+    public $transactionId;
 
     /**
      * The type of transaction [AUTH_CAPTURE, AUTH_ONLY, CAPTURE_ONLY]

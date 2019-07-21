@@ -17,17 +17,10 @@ class Model
     /**
      * Model constructor.
      * @param object $data
-     * @param string $replace_id_key
      */
-    public function __construct($data, $replace_id_key = null)
+    public function __construct($data)
     {
         $data = Utility::objectToArray($data);
-
-        if ($replace_id_key && isset($data[$replace_id_key]))
-        {
-            $this->id = $data[$replace_id_key];
-            unset($data[$replace_id_key]);
-        }
 
         if (is_array($data) && count($data))
         {

@@ -9,10 +9,15 @@ class VaultedShopper extends Model
 {
     public function __construct($data = null)
     {
-        parent::__construct($data, 'vaultedShopperId');
+        parent::__construct($data);
     }
 
     protected $children = ['transactionFraudInfo' => self::ITEM, 'shippingContactInfo' => self::ITEM, 'paymentSources' => self::ITEM];
+
+    /**
+     * @var integer
+     */
+    public $vaultedShopperId;
 
     /**
      * @var string

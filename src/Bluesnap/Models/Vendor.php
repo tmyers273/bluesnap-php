@@ -9,10 +9,15 @@ class Vendor extends Model
 {
     public function __construct($data = null)
     {
-        parent::__construct($data, 'vendorId');
+        parent::__construct($data);
     }
 
     protected $children = ['vendorAgreement' => self::ITEM, 'vendorPrincipal' => self::ITEM, 'payoutInfo' => self::COLLECTION];
+
+    /**
+     * @var integer
+     */
+    public $vendorId;
 
     /**
      * @var string
